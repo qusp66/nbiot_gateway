@@ -1,0 +1,48 @@
+extends layout
+block content
+    .row
+        .col-xs-12
+            .panel.panel-default
+                .panel-heading [RUN ONCE] NB-IoT GW Configuration
+                .panel-body    
+                    form(action='/config', method='post', id="dev")
+                        fieldset
+                            .form-group.row
+                                .col-sm-12
+                                    label IoT Hub Connection String
+                                    input.form-control(type='text' name='cs' required) 
+                            .form-group.row
+                                .col-sm-6
+                                    label Redis Key 
+                                    input.form-control(type='text' name='rkey' required) 
+                                .col-sm-6
+                                    label Redis Server
+                                    input.form-control(type='text' name='rurl' required) 
+                            .form-group.row
+                                .col-sm-2
+                                    label Port for D2C
+                                    input.form-control(type='text' name='d2c' required) 
+                                .col-sm-2
+                                    label Port for C2D
+                                    input.form-control(type='text' name='c2d' required)  
+                                .col-sm-2
+                                    label Port for Radius
+                                    input.form-control(type='text' name='radius' required) 
+                                .col-sm-2
+                                    label Port for CoAP
+                                    input.form-control(type='text' name='coap' required) 
+                                .col-sm-2
+                                    label Port for API Server
+                                    input.form-control(type='text' name='api' required) 
+                                .col-sm-2
+                                    label Socket Version
+                                    select.selectpicker.form-control(name='ipv' required)
+                                        option(value='udp4') UDP4
+                                        option(value='udp6') UDP6                                    
+                            .form-group.row
+                                .col-sm-2
+                                    button.btn.btn-primary(type='submit' form='dev') SAVE »                                       
+    .row
+        .col-xs-12  
+            .panel.panel-default
+                .panel-heading © For educational purposes only
